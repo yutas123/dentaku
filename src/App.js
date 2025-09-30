@@ -4,7 +4,7 @@ import Button from "./components/Button";
 function App() {
   const [left, setLeft] = useState(0);
   const [ope, setOpe] = useState(null);
-  const [right, setRight] = useState(0);
+  const [right, setRight] = useState(null);
   const [ans, setAns] = useState(null);
   const digits = [0,1,2,3,4,5,6,7,8,9];
   const operations = ["+","-","*","/"];
