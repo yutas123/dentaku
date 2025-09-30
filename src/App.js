@@ -26,6 +26,11 @@ function App() {
 
   function equalKeyPressed(){
     if(ans === null){
+      setAns(null);
+      setOpe(null);
+      setLeft(null);
+      setRight(null);
+
       if(ope === "+"){
         setAns(left+right);
       }else if(ope === "-"){
@@ -50,7 +55,7 @@ function App() {
         {left}
         {ope === null ? "" : ope}
         {ope === null ? "" : right}
-        {ans === null ? "" : " answer:"+ans }
+        {ans === null ? "" : + ans }
       </div>
 
       <div className="ButtonWrap">
