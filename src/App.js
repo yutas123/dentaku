@@ -44,7 +44,7 @@ function App() {
       setAns(null);
       setOpe(null);
       setLeft(0);
-      setRight(0);
+      setRight(null);
     }
   }
 
@@ -61,16 +61,22 @@ function App() {
       <div className="ButtonWrap">
         <div className="ButtonWrap_left">
 
-        {digits.map((n , i) => (
-          <Button
-          key={n}
-          text={String(n)}
-          onClick={() => keyPressed(n)}
-          disabled={ans !== null}
-          />
-        ))}
+        {digits.map((n , i) => {
+          return(
+            <Button
+              key={n}
+              text={String(n)}
+              onClick={() => keyPressed(n)}
+              disabled={ans !== null}
+            />
+          );
+        })}
 
-        <Button text={ans === null ? "=" : "C"} onClick={ ()=> {equalKeyPressed()} } />
+        <Button
+          text={ans === null ? "=" : "C"}
+          onClick={ ()=> {equalKeyPressed()} } 
+          disabled={ans === null && right === null}
+          />
       </div>
       <div className="ButtonWrap_right">
         {operations.map((n , i) => (
